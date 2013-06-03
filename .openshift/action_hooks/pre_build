@@ -21,7 +21,7 @@ function get_ruby_version() {
 #          variables for DB HOST, USERNAME and PASSWORD.
 # 
 pushd "$OPENSHIFT_REPO_DIR" > /dev/null
-[ ! -f Gemfile.lock ] && cp -f "Gemfile.lock.$(get_ruby_version)" Gemfile.lock
+[ ! -f Gemfile.lock ] && cp -f "Gemfile.lock.$OPNSHIFT_RUBY_VERSION" Gemfile.lock
 
 if [ -f config/database.yml ]; then
    sed -i "s#\$OPENSHIFT_MYSQL_DB_HOST#$OPENSHIFT_MYSQL_DB_HOST#;          \
